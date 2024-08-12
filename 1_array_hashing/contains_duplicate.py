@@ -21,17 +21,20 @@ Output: false
 """
 
 
+from typing import List
+
+
 class Solution:
     # 1. brute force
-    def brute_force(self, nums: list[int]) -> bool:
+    def brute_force(self, nums: List[int]) -> bool:
         return False
 
     # 2. sorting
-    def sorting(self, nums: list[int]) -> bool:
+    def sorting(self, nums: List[int]) -> bool:
         return False
 
     # 3. hashset
-    def hashset(self, nums: list[int]) -> bool:
+    def hashset(self, nums: List[int]) -> bool:
         hs = set()
         for i in range(len(nums)):
             if nums[i] in hs:

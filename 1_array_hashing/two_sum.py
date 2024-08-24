@@ -37,7 +37,6 @@ Constraints:
     -10,000,000 <= target <= 10,000,000
 """
 
-
 from typing import List
 
 
@@ -70,7 +69,12 @@ Solution
 
 url: https://neetcode.io/problems/two-integer-sum
 video: https://youtu.be/KLlXCFG5TnA
-code: 
+
+1. hashmap
+time:
+space:
+code:
+```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         prevMap = {}  # val -> index
@@ -80,4 +84,5 @@ class Solution:
             if diff in prevMap:
                 return [prevMap[diff], i]
             prevMap[n] = i
+```
 """

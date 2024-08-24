@@ -25,12 +25,14 @@ Constraints:
     - s and t consist of lowercase English letters.
 """
 
+
 class Solution:
     def hashmap(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
 
-        countS, countT = {}, {}
+        countS: dict = {}
+        countT: dict = {}
 
         for i in range(len(s)):
             countS[s[i]] = 1 + countS.get(s[i], 0)
@@ -38,18 +40,18 @@ class Solution:
         return countS == countT
 
 
-case1S = "apple"
-case1T = "plpea"
-case2S = "asneaxl"
-case2T = "yejindp"
-case3S = "iloveyou"
-case3T = "youlovei"
+caseS1 = "racecar"
+caseT1 = "carrace"
+caseS2 = "jar"
+caseT2 = "jam"
+caseS3 = "asneaxl"
+caseT3 = "jinyedp"
 
 solution = Solution()
 
-print(f"hashmap case1: {solution.hashmap(case1S, case1T)}")
-print(f"hashmap case2: {solution.hashmap(case2S, case2T)}")
-print(f"hashmap case3: {solution.hashmap(case3S, case3T)}")
+print(f"hashmap case1: {solution.hashmap(caseS1, caseT1)}")
+print(f"hashmap case2: {solution.hashmap(caseS2, caseT2)}")
+print(f"hashmap case3: {solution.hashmap(caseS3, caseT3)}")
 
 """
 Solution
@@ -64,6 +66,7 @@ space: O(1)
 time: O(s+t)
 space: O(s+t)
 code:
+```python
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -75,4 +78,5 @@ class Solution:
             countS[s[i]] = 1 + countS.get(s[i], 0)
             countT[t[i]] = 1 + countT.get(t[i], 0)
         return countS == countT
+```
 """

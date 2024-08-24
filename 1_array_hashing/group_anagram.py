@@ -38,7 +38,7 @@ from typing import List
 
 class Solution:
     def dictionary(self, strs: List[str]) -> List[List[str]]:
-        res = defaultdict(List)
+        res = defaultdict(list)
         for s in strs:
             count = [0] * 26
             for c in s:
@@ -62,8 +62,12 @@ Solution
 
 url: https://neetcode.io/problems/anagram-groups
 video: https://youtu.be/vzdNOK2oB2E
+
+1. dictionary
+time:
+space:
 code:
-```dictionary
+```python
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         ans = defaultdict(list)

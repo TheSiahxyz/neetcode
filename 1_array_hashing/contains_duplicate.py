@@ -20,7 +20,6 @@ Input: nums = [1, 2, 3, 4]
 Output: false
 """
 
-
 from typing import List
 
 
@@ -35,7 +34,7 @@ class Solution:
 
     # 3. hashset
     def hashset(self, nums: List[int]) -> bool:
-        hs = set()
+        hs: set = set()
         for i in range(len(nums)):
             if nums[i] in hs:
                 return True
@@ -70,6 +69,7 @@ space: O(1)
 time: O(n)
 space: O(n)
 code:
+```python
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
         hashset = set()
@@ -79,4 +79,5 @@ class Solution:
                 return True
             hashset.add(n)
         return False
+```
 """

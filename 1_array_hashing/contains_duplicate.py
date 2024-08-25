@@ -20,7 +20,7 @@ Input: nums = [1, 2, 3, 4]
 Output: false
 """
 
-from typing import List
+from typing import List, Set
 
 
 class Solution:
@@ -34,11 +34,11 @@ class Solution:
 
     # 3. hashset
     def hashset(self, nums: List[int]) -> bool:
-        hs: set = set()
-        for i in range(len(nums)):
-            if nums[i] in hs:
+        hs: Set = set()
+        for _, n in enumerate(nums):
+            if n in hs:
                 return True
-            hs.add(nums[i])
+            hs.add(n)
         return False
 
 

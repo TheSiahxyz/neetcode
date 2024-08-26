@@ -33,14 +33,14 @@ Constraints:
 """
 
 from collections import defaultdict
-from typing import List
+from typing import Dict, List
 
 
 class Solution:
     def dictionary(self, strs: List[str]) -> List[List[str]]:
-        res: dict = defaultdict(list)
+        res: Dict = defaultdict(list)
         for s in strs:
-            count = [0] * 26
+            count: List[int] = [0] * 26
             for c in s:
                 count[ord(c) - ord("a")] += 1
             res[tuple(count)].append(s)

@@ -30,6 +30,8 @@ Constraints:
     1 <= k <= number of distinct elements in nums.
 """
 
+from typing import List
+
 
 class Solution:
     """
@@ -47,20 +49,30 @@ class Solution:
         Returns:
             List[int]: elements list
         """
-        return [-1, -1]
+        count = {}
+        freq = [[] for i in range(len(nums) + 1)]
+
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():
+            freq[c].append(n)
+
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
 
 
 case1 = [1, 2, 2, 3, 3, 3]
 k1 = 2
 case2 = [7, 7]
 k2 = 1
-case3 = [0, 9, 0, 6, 0, 4]
-k3 = 3
 
 solution = Solution()
 print(f" hashmap case1: {solution.hashmap(case1,k1)}")
 print(f" hashmap case2: {solution.hashmap(case2,k2)}")
-print(f" hashmap case3: {solution.hashmap(case3,k3)}")
 
 
 """

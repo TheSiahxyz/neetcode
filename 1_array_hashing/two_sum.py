@@ -42,12 +42,12 @@ from typing import List
 
 class Solution:
     def hashmap(self, nums: List[int], target: int) -> List[int]:
-        mp = {}
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in mp:
-                return [mp[diff], i]
-            mp[nums[i]] = i
+        hm: dict = {}
+        for i, index in enumerate(nums):
+            diff = target - index
+            if diff in hm:
+                return [hm[diff], i]
+            hm[index] = i
         return [-1, -1]
 
 
@@ -71,8 +71,8 @@ url: https://neetcode.io/problems/two-integer-sum
 video: https://youtu.be/KLlXCFG5TnA
 
 1. hashmap
-time:
-space:
+time: O(n)
+space: O(n)
 code:
 ```python
 class Solution:

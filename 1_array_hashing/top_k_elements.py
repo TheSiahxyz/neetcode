@@ -3,6 +3,8 @@ Question
 
 Top K Elements in List
 
+Medium
+
 Given an integer array nums and an integer k, return the k most frequent elements within the array.
 
 The test cases are generated such that the answer is always unique.
@@ -30,32 +32,71 @@ Constraints:
 
 
 class Solution:
-    def fn_name(self, parameters) -> return_type:
-        return return
+    """
+    A class to solve top_k_elements from hash
+    """
+
+    def hashmap(self, nums: List[int], k: int) -> List[int]:
+        """
+        Frequent elements from the input nums: List[int] and k: int using a hashmap approach.
+
+        Args:
+            nums: List[int]: integer list
+            k: int: frequency
+
+        Returns:
+            List[int]: elements list
+        """
+        return [-1, -1]
 
 
-
-case1 = case1
-case2 = case2
-case3 = case3
+case1 = [1, 2, 2, 3, 3, 3]
+k1 = 2
+case2 = [7, 7]
+k2 = 1
+case3 = [0, 9, 0, 6, 0, 4]
+k3 = 3
 
 solution = Solution()
-print(f" fn_name case1: {solution.fn_name(case1args)}")
-print(f" fn_name case2: {solution.fn_name(case2args)}")
-print(f" fn_name case3: {solution.fn_name(case3args)}")
+print(f" hashmap case1: {solution.hashmap(case1,k1)}")
+print(f" hashmap case2: {solution.hashmap(case2,k2)}")
+print(f" hashmap case3: {solution.hashmap(case3,k3)}")
 
 
 """
 Solution
 
-url: url
-video: video
+url: https://neetcode.io/problems/top-k-elements-in-list
+video: https://youtu.be/YPTqKIgVk-k
 
-1.
-time:
-space:
+1. Bucket sort
+time: O(n)
+space: O(n)
 code:
 ```python
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        count = {}
+        freq = [[] for i in range(len(nums) + 1)]
 
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():
+            freq[c].append(n)
+
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
 ```
+
+2. Heap sort (max heap)
+time: O(k*logn)
+space: O(k*logn)
+
+3. Sorting
+time: O(n*logn)
+space: O(n*logn)
 """

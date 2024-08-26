@@ -34,8 +34,8 @@ class Solution:
         countS: dict = {}
         countT: dict = {}
 
-        for i in range(len(s)):
-            countS[s[i]] = 1 + countS.get(s[i], 0)
+        for i, si in enumerate(s):
+            countS[si] = 1 + countS.get(si, 0)
             countT[t[i]] = 1 + countT.get(t[i], 0)
         return countS == countT
 

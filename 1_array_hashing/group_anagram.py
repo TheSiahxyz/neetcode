@@ -64,8 +64,8 @@ url: https://neetcode.io/problems/anagram-groups
 video: https://youtu.be/vzdNOK2oB2E
 
 1. dictionary
-time:
-space:
+time: O(m*n*26) = O(m*n)
+space: O(m*n)
 code:
 ```python
 class Solution:

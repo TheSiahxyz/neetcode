@@ -18,6 +18,12 @@ Example 2:
 Input: nums = [1, 2, 3, 4]
 
 Output: false
+
+Example 3:
+
+Input: nums = [1, 3, 4, 1]
+
+Output: true
 """
 
 from typing import List, Set
@@ -42,9 +48,9 @@ class Solution:
         return False
 
 
-case1 = [1, 2, 3, 4, 5]
-case2 = [2, 2, 3, 4, 5]
-case3 = [3, 4, 1, 6, 3]
+case1 = [1, 2, 3, 3]
+case2 = [1, 2, 3, 4]
+case3 = [1, 3, 4, 1]
 solution = Solution()
 print(f"hashset case1: {solution.hashset(case1)}")
 print(f"hashset case2: {solution.hashset(case2)}")

@@ -11,8 +11,7 @@ Return the answer with the smaller index first.
 
 Example 1:
 
-Input: 
-nums = [3,4,5,6], target = 7
+Input: nums = [3,4,5,6], target = 7
 
 Output: [0,1]
 
@@ -44,9 +43,8 @@ class Solution:
     def hashmap(self, nums: List[int], target: int) -> List[int]:
         hm: dict = {}
         for i, index in enumerate(nums):
-            diff = target - index
-            if diff in hm:
-                return [hm[diff], i]
+            if target - index in hm:
+                return [hm[target - index], i]
             hm[index] = i
         return [-1, -1]
 

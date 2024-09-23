@@ -50,7 +50,7 @@ class Solution:
             List[int]: elements list
         """
         count = {}
-        freq = [[] for i in range(len(nums) + 1)]
+        freq = [[] for _ in range(len(nums) + 1)]
 
         for n in nums:
             count[n] = 1 + count.get(n, 0)

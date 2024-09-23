@@ -21,9 +21,17 @@ Input: s = "jar", t = "jam"
 
 Output: false
 
+Example 3:
+
+Input: s = "asneaxl", t = "jinyedp"
+
+Output: false
+
 Constraints:
     - s and t consist of lowercase English letters.
 """
+
+from typing import Dict
 
 
 class Solution:
@@ -31,13 +39,13 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        countS: dict = {}
-        countT: dict = {}
+        cs: Dict = {}
+        ct: Dict = {}
 
-        for i, si in enumerate(s):
-            countS[si] = 1 + countS.get(si, 0)
-            countT[t[i]] = 1 + countT.get(t[i], 0)
-        return countS == countT
+        for i, n in enumerate(s):
+            cs[n] = 1 + cs.get(n, 0)
+            ct[t[i]] = 1 + ct.get(t[i], 0)
+        return cs == ct
 
 
 caseS1 = "racecar"

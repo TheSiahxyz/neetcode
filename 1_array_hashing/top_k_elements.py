@@ -54,16 +54,16 @@ class Solution:
 
         for n in nums:
             count[n] = 1 + count.get(n, 0)
-        for n, c in count.items():
-            freq[c].append(n)
+        for i, c in count.items():
+            freq[c].append(i)
 
         res: List = []
         for i in range(len(freq) - 1, 0, -1):
-            for n in freq[i]:
-                res.append(n)
+            for j in freq[i]:
+                res.append(j)
                 if len(res) == k:
                     return res
-        return []
+        return [-1]
 
 
 case1 = [1, 2, 2, 3, 3, 3]

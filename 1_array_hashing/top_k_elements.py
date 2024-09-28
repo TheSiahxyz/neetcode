@@ -63,7 +63,7 @@ class Solution:
                 res.append(j)
                 if len(res) == k:
                     return res
-        return [-1]
+        return []
 
 
 case1 = [1, 2, 2, 3, 3, 3]

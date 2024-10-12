@@ -36,12 +36,12 @@ Constraints:
     -10,000,000 <= target <= 10,000,000
 """
 
-from typing import List
+from typing import Dict, List
 
 
 class Solution:
     def hashmap(self, nums: List[int], target: int) -> List[int]:
-        hm: dict = {}
+        hm: Dict = {}
         for i, index in enumerate(nums):
             if target - index in hm:
                 return [hm[target - index], i]

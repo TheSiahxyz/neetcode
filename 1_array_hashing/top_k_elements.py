@@ -30,7 +30,7 @@ Constraints:
     1 <= k <= number of distinct elements in nums.
 """
 
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 
 class Solution:
@@ -65,15 +65,28 @@ class Solution:
                     return res
         return []
 
+    def print(self, examples: Dict[str, Tuple[List[int], int]]) -> None:
+        """
+        funciton to print the result.
 
-case1 = [1, 2, 2, 3, 3, 3]
-k1 = 2
-case2 = [7, 7]
-k2 = 1
+        Args:
+            example: Dict, a dictionary of examples
+        """
+
+        for name, (param1, param2) in examples.items():
+            result = self.hashmap(param1, param2)
+            print(f"{name}: {result}")
+
+    def main(self):
+        """
+        main function to call print function to test examples
+        """
+        cases = {"case1": ([1, 2, 2, 3, 3, 3], 2), "case2": ([7, 7], 2)}
+        self.print(cases)
+
 
 solution = Solution()
-print(f" hashmap case1: {solution.hashmap(case1,k1)}")
-print(f" hashmap case2: {solution.hashmap(case2,k2)}")
+solution.main()
 
 
 """

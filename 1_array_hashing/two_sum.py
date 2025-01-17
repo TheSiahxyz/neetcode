@@ -42,10 +42,10 @@ from typing import Dict, List
 class Solution:
     def hashmap(self, nums: List[int], target: int) -> List[int]:
         hm: Dict = {}
-        for i, index in enumerate(nums):
-            if target - index in hm:
-                return [hm[target - index], i]
-            hm[index] = i
+        for i, n in enumerate(nums):
+            if target - n in hm:
+                return [hm[target - n], i]
+            hm[n] = i
         return [-1, -1]
 
 

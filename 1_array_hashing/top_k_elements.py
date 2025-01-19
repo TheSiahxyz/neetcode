@@ -72,7 +72,6 @@ class Solution:
         Args:
             example: Dict, a dictionary of examples
         """
-
         for name, (param1, param2) in examples.items():
             result = self.hashmap(param1, param2)
             print(f"{name}: {result}")
